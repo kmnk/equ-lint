@@ -4,7 +4,7 @@
 
 ## INSTALL
 
-    npm install equ-lint
+    $ npm -g install equ-lint
 
 
 ## USAGE
