@@ -1,5 +1,6 @@
+#!/usr/bin/env node
 (function() {
-  var getParameters, lint, paths, readAndParse, _;
+  var getParameters, lint, readAndParse, _;
 
   _ = require('underscore');
 
@@ -9,9 +10,7 @@
 
   readAndParse = require('equ').readAndParse;
 
-  paths = getParameters();
-
-  _.each(paths, function(path) {
+  _.each(getParameters(), function(path) {
     return lint(readAndParse(path), path);
   });
 
