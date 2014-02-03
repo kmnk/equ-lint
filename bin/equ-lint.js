@@ -9,7 +9,7 @@
   lint = require('../lib/lint').lint;
 
   param
-    .version('0.0.1')
+    .version('0.0.2')
     .option('-c, --color [true/false]', 'color output?', 'true')
     .parse(process.argv);
 

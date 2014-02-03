@@ -1,6 +1,6 @@
 {
   "name": "equ-lint",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "check quality tool implementation using *Equ*",
   "keywords": ["parser", "esprima", "quality", "check", "command"],
   "author": "Kmnk Nmk <kmnknmk@gmail.com>",
