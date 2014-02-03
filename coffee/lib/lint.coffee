@@ -1,11 +1,13 @@
 fs = require 'fs'
 _ = require 'underscore'
 
-printer = require './printer'
+{Printer} = require './printer'
 
 LINT_DIRECTORY_PATH = "#{__dirname}/../lint/"
 
-lint = ($equ, path) ->
+lint = ($equ, path, option) ->
+  printer = new Printer color: if option.color is 'true' then true else false
+
   printer.log "review #{path}"
 
   lintPaths = _readdir LINT_DIRECTORY_PATH

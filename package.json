@@ -1,16 +1,19 @@
 {
   "name": "equ-lint",
   "version": "0.0.1",
-  "bin": { "equ-lint" : "bin/equ-lint.js" },
+  "bin": {
+    "equ-lint": "bin/equ-lint.js"
+  },
   "dependencies": {
     "underscore": "~1.5.2",
     "equ": "~0.0.3",
-    "equ-finder": "~0.0.1"
+    "equ-finder": "~0.0.1",
+    "commander": "~2.1.0"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-watch": "~0.5.3",
     "grunt-contrib-coffee": "~0.7.0"
   },
-  "private" : false
+  "private": false
 }
