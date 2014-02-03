@@ -1,6 +1,6 @@
 # equ-lint
 
-*equ-lint* is check quality tool implementation using *Equ*
+ *equ-lint* is check quality tool implementation using *Equ*
 
 ## INSTALL
 
@@ -9,7 +9,13 @@
 
 ## USAGE
 
-    $ equ-lint /path/to/anyscript.js
+    $ equ-lint -c true /path/to/anyscript.js
+
+### OPTIONS
+
+- -c, --color
+-- 'true' or 'false' expected
+-- print color log if this is true
 
 
 ## REQUIREMENTS
