@@ -2,7 +2,7 @@
   "name": "equ-lint",
   "version": "0.0.1",
   "description": "check quality tool implementation using *Equ*",
-  "keywords": ["parser", "esprima", "quality"],
+  "keywords": ["parser", "esprima", "quality", "check", "command"],
   "author": "Kmnk Nmk <kmnknmk@gmail.com>",
   "bin": {
     "equ-lint": "bin/equ-lint.js"
