@@ -17,11 +17,18 @@ lint = ($equ, path, option) ->
 
   printer.log "review #{path}" if minLevel <= LEVEL.log
 
-  lintPaths = _readdir LINT_DIRECTORY_PATH
+  lintFiles = if option.names
+    _.map option.names, (name) -> "#{name}.js"
+  else
+    _readdir LINT_DIRECTORY_PATH
 
-  results = _.flatten _.map lintPaths, (lintPath) ->
-    unless lintPath.match ///\.js$/// then return
-    {lint} = require "../lint/#{lintPath}"
+  if option.exclude
+    lintFiles = _.reject lintFiles, (file) ->
+      _.contains _.map(option.exclude, (name) -> "#{name}.js"), file
+
+  results = _.flatten _.map lintFiles, (lintFile) ->
+    unless lintFile.match ///\.js$/// then return
+    {lint} = require "../lint/#{lintFile}"
     lint $equ, path
 
   _.each results, (result) ->
