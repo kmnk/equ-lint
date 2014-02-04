@@ -5,10 +5,17 @@ _ = require 'underscore'
 
 LINT_DIRECTORY_PATH = "#{__dirname}/../lint/"
 
+LEVEL =
+  log:   0
+  info:  1
+  warn:  2
+  error: 3
+
 lint = ($equ, path, option) ->
   printer = new Printer color: if option.color is 'true' then true else false
+  minLevel = LEVEL[option.level]
 
-  printer.log "review #{path}"
+  printer.log "review #{path}" if minLevel <= LEVEL.log
 
   lintPaths = _readdir LINT_DIRECTORY_PATH
 
@@ -19,8 +26,11 @@ lint = ($equ, path, option) ->
 
   _.each results, (result) ->
     unless result then return
-    messages = [result.message]
+
     level = if result.level then result.level else 'info'
+    unless minLevel <= LEVEL[level] then return
+
+    messages = [result.message]
     messages.unshift "#{_locToOneline result.loc}:"
     printer[level] messages.join ' '
 
