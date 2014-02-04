@@ -15,7 +15,7 @@ lint = ($equ, path, option) ->
   printer = new Printer color: if option.color is 'true' then true else false
   minLevel = LEVEL[option.level]
 
-  printer.log "review #{path}" if minLevel <= LEVEL.log
+  printer.log "lint #{path}" if minLevel <= LEVEL.log
 
   lintFiles = if option.names
     _.map option.names, (name) -> "#{name}.js"
