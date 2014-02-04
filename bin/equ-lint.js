@@ -11,7 +11,7 @@
   list = function (val) { return val.split(','); };
 
   param
-    .version('0.0.2')
+    .version('0.0.3')
     .usage('[options] -- <file ...>')
     .option('-c, --color [true|false]', 'color output ?', 'true')
     .option('-l, --level [log|info|warn|error]', 'log level ?', 'log')
